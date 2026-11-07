@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Umama Sadia - BSIT Student Portfolio">
+<title>Umama Sadia | BSIT Student Portfolio</title>
+<style>
+:root{--bg:#f7f8fc;--surface:#fff;--surface2:#f0f3f8;--text:#18202f;--muted:#667085;--primary:#5b5bf7;--primary2:#4444d9;--border:#e4e7ec;--shadow:0 18px 50px rgba(16,24,40,.08);--radius:20px}
+body.dark{--bg:#0b1020;--surface:#12192b;--surface2:#1a2338;--text:#f5f7ff;--muted:#a7b0c3;--border:#28334b;--shadow:0 18px 50px rgba(0,0,0,.28)}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:.3s}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+header{position:fixed;top:0;width:100%;z-index:1000;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font-size:1.35rem;font-weight:800}.logo span{color:var(--primary)}
+.nav-links{display:flex;align-items:center;gap:7px;list-style:none}.nav-links a{padding:9px 13px;border-radius:10px;color:var(--muted);font-weight:600;font-size:.94rem}.nav-links a:hover,.nav-links a.active{color:var(--primary);background:var(--surface2)}
+.nav-actions{display:flex;align-items:center;gap:9px}.icon-btn,.menu-btn{width:42px;height:42px;border-radius:12px;background:var(--surface2);color:var(--text);display:grid;place-items:center;font-size:1.1rem;border:0;cursor:pointer}.menu-btn{display:none}
+section{padding:95px 0}#home{min-height:100vh;display:grid;place-items:center;padding-top:120px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:70px}.eyebrow{display:inline-flex;gap:8px;padding:7px 12px;border-radius:999px;background:var(--surface2);color:var(--primary);font-weight:700;font-size:.85rem;margin-bottom:18px}
+h1{font-size:clamp(2.7rem,7vw,5.3rem);line-height:1.03;letter-spacing:-3px;margin-bottom:20px}h1 span{color:var(--primary)}.hero p{max-width:680px;color:var(--muted);font-size:1.08rem;margin-bottom:28px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;font-weight:700;border:1px solid var(--border);cursor:pointer}.btn-primary{color:#fff;background:var(--primary);border-color:var(--primary)}.btn-primary:hover{background:var(--primary2)}.btn-secondary{background:var(--surface)}
+.hero-card{background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:28px;padding:30px}.avatar{width:110px;height:110px;display:grid;place-items:center;border-radius:30px;background:linear-gradient(135deg,var(--primary),#8b5cf6);color:#fff;font-size:2.3rem;font-weight:900;margin-bottom:22px}.hero-card h3{font-size:1.45rem;margin-bottom:4px}.hero-card p{margin:0 0 18px;font-size:.95rem}.mini-info{display:grid;gap:10px}.mini-info div{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px solid var(--border);font-size:.9rem}.mini-info span:first-child{color:var(--muted)}
+.section-heading{max-width:700px;margin-bottom:45px}.section-heading .label{color:var(--primary);font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:1.4px}.section-heading h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:7px 0 12px;letter-spacing:-1px}.section-heading p,.card p,.project-card p,.timeline-item p{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.card h3{margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}.stat{background:var(--surface2);border-radius:14px;padding:18px}.stat strong{display:block;font-size:1.5rem;color:var(--primary)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:23px}.skill-icon{font-size:1.7rem;margin-bottom:12px}.skill-card h3{margin-bottom:10px}.skill-card ul{list-style:none;color:var(--muted);display:grid;gap:7px;font-size:.93rem}.skill-card li::before{content:"✓";color:var(--primary);font-weight:bold;margin-right:7px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:27px;transition:.25s}.project-card:hover{transform:translateY(-5px);border-color:var(--primary)}.project-number{color:var(--primary);font-weight:900;font-size:.85rem}.project-card h3{margin:8px 0 10px;font-size:1.35rem}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{background:var(--surface2);color:var(--muted);padding:5px 9px;border-radius:8px;font-size:.78rem;font-weight:700}
+.timeline{position:relative;max-width:850px;margin:auto}.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--border)}.timeline-item{position:relative;padding-left:45px;margin-bottom:30px}.timeline-dot{position:absolute;left:1px;top:4px;width:20px;height:20px;background:var(--primary);border:5px solid var(--bg);border-radius:50%}.timeline-item h3{margin-bottom:3px}.timeline-item .date{color:var(--primary);font-weight:700;font-size:.85rem}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}.contact-list{display:grid;gap:15px;margin-top:20px}.contact-item{padding:15px;border-radius:14px;background:var(--surface2)}.contact-item small{display:block;color:var(--muted);margin-bottom:3px}
+form{display:grid;gap:14px}input,textarea{width:100%;border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:13px 15px;border-radius:11px;outline:0;font:inherit}input:focus,textarea:focus{border-color:var(--primary)}textarea{min-height:145px;resize:vertical}.form-message{color:#15803d;display:none;font-weight:700}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);text-align:center}.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}#topBtn{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;display:none;z-index:900;box-shadow:var(--shadow);border:0}
+@media(max-width:900px){.hero,.about-grid,.contact-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}.hero-card{max-width:600px}}
+@media(max-width:700px){section{padding:75px 0}.nav-links{position:absolute;top:72px;left:4%;right:4%;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:10px;display:none;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}.nav-links.open{display:flex}.nav-links a{display:block}.menu-btn{display:grid}.skills-grid,.projects-grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero{gap:35px}}
+@media(max-width:450px){.stats{grid-template-columns:1fr}.hero-buttons{flex-direction:column}.btn{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="container"><nav>
+<a href="#home" class="logo">Umama<span>.</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" class="active">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-actions"><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button></div>
+</nav></div></header>
+
+<main>
+<section id="home"><div class="container hero">
+<div class="reveal"><div class="eyebrow">🎓 BSIT Student · 3rd Semester</div>
+<h1>Hi, I'm <span>Umama Sadia</span>.</h1>
+<p>A passionate Bachelor of Science in Information Technology student interested in software development, web technologies, databases, and practical problem-solving through technology.</p>
+<div class="hero-buttons"><a class="btn btn-primary" href="#projects">View My Projects</a><a class="btn btn-secondary" href="#contact">Contact Me</a></div></div>
+<div class="hero-card reveal"><div class="avatar">US</div><h3>Umama Sadia</h3><p>BS Information Technology Student</p><div class="mini-info">
+<div><span>Semester</span><strong>3rd</strong></div><div><span>Focus</span><strong>Software & Web</strong></div><div><span>Email</span><strong>umamasadia410@gmail.com</strong></div><div><span>Status</span><strong>Available</strong></div>
+</div></div>
+</div></section>
+
+<section id="about"><div class="container"><div class="section-heading reveal"><div class="label">About Me</div><h2>Learning technology by building real projects.</h2><p>I am currently studying BS Information Technology and developing practical skills through academic projects, coding exercises, and web development.</p></div>
+<div class="about-grid"><div class="card reveal"><h3>My Goal</h3><p>My goal is to become a skilled IT professional who can transform ideas into useful, reliable, and user-friendly software solutions. I enjoy learning new technologies and improving my development skills one project at a time.</p></div>
+<div class="card reveal"><h3>What I Bring</h3><p>I have experience working on academic management systems, security-related projects, programming assignments, databases, and basic web development. I focus on clean structure, logical thinking, and continuous learning.</p><div class="stats"><div class="stat"><strong>3rd</strong><span>Semester</span></div><div class="stat"><strong>4+</strong><span>Projects</span></div></div></div></div>
+</div></section>
+
+<section id="skills"><div class="container"><div class="section-heading reveal"><div class="label">Skills</div><h2>My current technical toolkit.</h2><p>These are the technologies and areas I am currently learning and using in academic and personal projects.</p></div>
+<div class="skills-grid">
+<div class="skill-card reveal"><div class="skill-icon">💻</div><h3>Programming</h3><ul><li>C / C++</li><li>Java</li><li>Python Basics</li><li>Problem Solving</li></ul></div>
+<div class="skill-card reveal"><div class="skill-icon">🌐</div><h3>Web Development</h3><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive Design</li></ul></div>
+<div class="skill-card reveal"><div class="skill-icon">🗄️</div><h3>Database</h3><ul><li>Database Concepts</li><li>SQL Basics</li><li>Data Management</li><li>ER Modeling</li></ul></div>
+<div class="skill-card reveal"><div class="skill-icon">🛠️</div><h3>Tools</h3><ul><li>VS Code</li><li>Git & GitHub</li><li>MS Office</li><li>Figma Basics</li></ul></div>
+</div></div></section>
+
+<section id="projects"><div class="container"><div class="section-heading reveal"><div class="label">Projects</div><h2>Academic projects I've completed.</h2><p>A selection of projects created while developing my programming, system analysis, database, and problem-solving skills.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><div class="project-number">01 · Management System</div><h3>Contact / SIM Management System</h3><p>A management system designed to organize contact or SIM-related information and provide structured operations for managing records.</p><div class="tags"><span class="tag">Programming</span><span class="tag">Database</span><span class="tag">CRUD</span></div></article>
+<article class="project-card reveal"><div class="project-number">02 · Management System</div><h3>Class Timetable Management System</h3><p>A system concept for organizing class schedules, subjects, timings, and timetable information in a structured and manageable format.</p><div class="tags"><span class="tag">System Design</span><span class="tag">Scheduling</span><span class="tag">Database</span></div></article>
+<article class="project-card reveal"><div class="project-number">03 · Academic Project</div><h3>Multivariable Model-Based Project</h3><p>An academic model-type project involving multiple variables, designed to demonstrate analytical thinking, relationships between inputs, and practical application of learned concepts.</p><div class="tags"><span class="tag">Modeling</span><span class="tag">Analysis</span><span class="tag">Academic</span></div></article>
+<article class="project-card reveal"><div class="project-number">04 · Security System</div><h3>Bank Security Alarm System</h3><p>A security-focused project concept designed around detecting suspicious activity and triggering an alarm mechanism to improve protection for a banking environment.</p><div class="tags"><span class="tag">Security</span><span class="tag">Logic</span><span class="tag">System Design</span></div></article>
+</div></div></section>
+
+<section id="education"><div class="container"><div class="section-heading reveal"><div class="label">Education</div><h2>My academic journey.</h2></div>
+<div class="timeline"><div class="timeline-item reveal"><span class="timeline-dot"></span><div class="date">Current · 3rd Semester</div><h3>Bachelor of Science in Information Technology</h3><p>Currently studying BSIT with a focus on programming, databases, system analysis, web technologies, and information technology fundamentals.</p></div>
+<div class="timeline-item reveal"><span class="timeline-dot"></span><div class="date">Previous</div><h3>Intermediate / Higher Secondary Education</h3><p>Completed higher secondary education and developed an interest in computing and technology.</p></div></div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="section-heading reveal"><div class="label">Contact</div><h2>Let's connect.</h2><p>Interested in collaboration, student projects, or discussing technology? Feel free to get in touch.</p></div>
+<div class="contact-grid"><div class="card reveal"><h3>Contact Information</h3><p>The details below can be replaced with your actual professional links later.</p><div class="contact-list">
+<div class="contact-item"><small>Email</small>umamasadia410@gmail.com</div>
+<div class="contact-item"><small>GitHub</small>github.com/umamasadia</div>
+<div class="contact-item"><small>LinkedIn</small>linkedin.com/in/umamasadia</div>
+</div></div>
+<div class="card reveal"><form id="contactForm"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><input type="text" placeholder="Subject" required><textarea placeholder="Your Message" required></textarea><button class="btn btn-primary" type="submit">Send Message</button><div class="form-message" id="formMessage">✓ Demo message submitted successfully!</div></form></div>
+</div></div></section>
+</main>
+
+<button id="topBtn" aria-label="Back to top">↑</button>
+<footer><div class="container">© <span id="year"></span> Umama Sadia · BSIT Student Portfolio</div></footer>
+
+<script>
+const themeBtn=document.getElementById("themeBtn"),menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks"),topBtn=document.getElementById("topBtn"),form=document.getElementById("contactForm"),formMessage=document.getElementById("formMessage");
+if(localStorage.getItem("portfolio-theme")==="dark"){document.body.classList.add("dark");themeBtn.textContent="☀";}
+themeBtn.addEventListener("click",()=>{document.body.classList.toggle("dark");const dark=document.body.classList.contains("dark");themeBtn.textContent=dark?"☀":"☾";localStorage.setItem("portfolio-theme",dark?"dark":"light");});
+menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"✕":"☰";});
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";}));
+const sections=document.querySelectorAll("section"),links=document.querySelectorAll(".nav-links a");
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{if(window.scrollY>=section.offsetTop-150)current=section.id;});links.forEach(link=>link.classList.toggle("active",link.getAttribute("href")==="#"+current));topBtn.style.display=window.scrollY>500?"grid":"none";});
+topBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("show");}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+form.addEventListener("submit",e=>{e.preventDefault();formMessage.style.display="block";form.reset();setTimeout(()=>formMessage.style.display="none",4000);});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
